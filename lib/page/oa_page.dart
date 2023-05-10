@@ -216,7 +216,7 @@ class _OAPageState extends State<OAPage> with PageVisibilityObserver {
         items2.add(
             HomeMessage("经费管理", "fund_manager.png", "fund_manager_page", tag2: "JFGL"));
         items2.add(
-            HomeMessage("报销管理", "reimburse_manager.png", "reimburse_manager_page", tag2: "BXGL"));
+            HomeMessage("报销管理", "reimburse_manager.png", "reimburse_page", tag2: "BXGL"));
         items2.add(
             HomeMessage("工资", "salary.png", "salary_page", tag2: "GZ"));
 

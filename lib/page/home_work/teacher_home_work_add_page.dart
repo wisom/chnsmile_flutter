@@ -31,7 +31,7 @@ import 'package:chnsmile_flutter/widget/select_attach.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_sound/flutter_sound.dart';
+import 'package:chnsmile_flutter/flutter_sound/flutter_sound.dart';
 import 'package:hi_base/color.dart';
 import 'package:hi_base/string_util.dart';
 import 'package:hi_base/view_util.dart';

@@ -82,6 +82,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 
+import '../page/info_collection/info_collection_add_page.dart';
+import '../page/info_collection/info_collection_detail_page.dart';
+import '../page/info_collection/info_collection_new_page.dart';
+import '../page/reimburse/reimburse_add_page.dart';
+import '../page/reimburse/reimburse_detail_page.dart';
+import '../page/reimburse/reimburse_page.dart';
+
 Map<String, FlutterBoostRouteFactory> routerMap = {
   '/': (RouteSettings settings, uniqueId) {
     return PageRouteBuilder<dynamic>(
@@ -450,5 +457,28 @@ Map<String, FlutterBoostRouteFactory> routerMap = {
   'info_collection_page': (RouteSettings settings, uniqueId) {
     return CupertinoPageRoute<dynamic>(
         settings: settings, builder: (_) => InfoCollectionPage(params: settings.arguments));
+  },
+  'info_collection_add_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings, builder: (_) => InfoCollectionNewPage(params: settings.arguments));
+  },
+  'info_collection_detail_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings,
+        builder: (_) => InfoCollectionDetailPage(params: settings.arguments));
+  },
+  'reimburse_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings, builder: (_) => ReimbursePage(params: settings.arguments));
+  },
+  'reimburse_add_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings,
+        builder: (_) => ReimburseAddPage(params: settings.arguments));
+  },
+  'reimburse_detail_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings,
+        builder: (_) => ReimburseDetailPage(params: settings.arguments));
   },
 };

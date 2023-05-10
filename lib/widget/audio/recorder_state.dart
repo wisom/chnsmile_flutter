@@ -21,7 +21,7 @@ import 'dart:async';
 
 import 'package:chnsmile_flutter/widget/audio/temp_file.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sound/flutter_sound.dart';
+import 'package:chnsmile_flutter/flutter_sound/flutter_sound.dart';
 
 import 'demo_active_codec.dart';
 import 'demo_media_path.dart';

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:hi_base/color.dart';
 import 'package:hi_base/format_util.dart';
 
 ///带缓存的image
@@ -59,4 +60,12 @@ smallIconText(IconData iconData, var text) {
 ///间距
 SizedBox hiSpace({double height: 1, double width: 1}) {
   return SizedBox(height: height, width: width);
+}
+
+
+///间距
+Container hiSpaceWithColor(BuildContext context,{Color color:HiColor.color_F7F7F7,double height, double width}) {
+  height??8;
+  width??MediaQuery.of(context).size.width;
+  return Container(color:color,height: height, width: width);
 }

@@ -24,7 +24,6 @@ Depends on all your plugins, and provides a function to register them.
   s.dependency 'flutter_boost'
   s.dependency 'flutter_image_compress'
   s.dependency 'flutter_plugin_record'
-  s.dependency 'flutter_sound'
   s.dependency 'fluttertoast'
   s.dependency 'path_provider_foundation'
   s.dependency 'shared_preferences_foundation'

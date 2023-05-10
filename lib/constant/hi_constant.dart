@@ -153,6 +153,7 @@ class HiConstant {
   static const String uploadAvator = 'app-api/app/user/uploadAvatar'; // 修改头像
   static const String uploadFile = 'app-api/sysFileInfo/uploadNew'; // 上传附件
   static const String studentClassPlan = 'app-api/app/school/student/classPlan'; // 课程表
+  static const String infoCollectionApprovalList = 'app-api/schoolMessageGather/getMessageGatherApp'; // 信息采集列表
 
   // Native页面
   static String seperator = Utils.isAndroid ? '/' : '_';

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:hi_base/view_util.dart';
 
+import 'info_collection_tab_page.dart';
+
 class InfoCollectionPage extends OABaseState {
   final Map params;
 
@@ -36,7 +38,7 @@ class _RepairPageState extends HiOAState<InfoCollectionPage>
     return Scaffold(
       appBar: appBar("信息采集", rightTitle: isEnable ? "新建" : "",
           rightButtonClick: () async {
-        BoostNavigator.instance.push('repair_add_page');
+        BoostNavigator.instance.push('info_collection_add_page');
       }),
       body: Column(
         children: [_tabBar(), _buildTabView()],
@@ -88,17 +90,18 @@ class _RepairPageState extends HiOAState<InfoCollectionPage>
         child: TabBarView(
             controller: _controller,
             children: _tabs.map((tab) {
-              return RepairTabPage(type: _buildType(tab));
+              return InfoCollectionTabPage(type: _buildType(tab));
             }).toList()));
   }
 
+  /// (0:查询教师发起的列表，1：查询我填写的)
   _buildType(String tab) {
-    if (tab == "未发布") {
+    if (tab == "我发起的统计单") {
+      return "0";
+    } else if (tab == "我填写的统计单") {
       return "1";
-    } else if (tab == "已发布") {
-      return "2";
     } else {
-      return "";
+      return "0";
     }
   }
 }

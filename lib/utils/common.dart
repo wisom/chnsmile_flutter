@@ -285,6 +285,19 @@ buildOAStatus(int type) {
   }
 }
 
+///0：未发布，1：已发布，3：已撤回
+buildInfoCollectionStatus(int type) {
+  if (type == 0) {
+    return [HiColor.color_D8D8D8, "未发布"];
+  } else if (type == 1) {
+    return [HiColor.color_00B0F0, "已发布"];
+  } else if (type == 3) {
+    return [Colors.grey, "已撤回"];
+  } else {
+    return [Colors.grey, "未知"];
+  }
+}
+
 buildSmallButton(String text, Color color, {Function onClick}) {
   return InkWell(
       onTap: onClick,

@@ -13,7 +13,8 @@ borderLine(BuildContext context, {bottom: true, top: false}) {
 
 ///底部阴影
 BoxDecoration bottomBoxShadow1(BuildContext context) {
-  return BoxDecoration(color: Colors.white,
+  return BoxDecoration(
+      color: Colors.white,
       border: Border.all(color: primary),
       borderRadius: BorderRadius.circular(2));
 }
@@ -34,20 +35,40 @@ BoxDecoration bottomBoxShadow(BuildContext context) {
 boxLine(BuildContext context) {
   return Container(
     padding: const EdgeInsets.only(top: 5, bottom: 5),
-    decoration: BoxDecoration(
-      border:borderLine(context)
-    ),
+    decoration: BoxDecoration(border: borderLine(context)),
+  );
+}
+
+///一根border线
+line(BuildContext context,
+    {Color color = HiColor.color_D8D8D8, double width = 1}) {
+  return Container(
+    decoration: BoxDecoration(border: Border.all(color: color, width: width)),
   );
 }
 
 /// 已批，已读的
 Text oaStatusText(int status, {String kinds = "1"}) {
-  return Text(kinds == "1" ? buildOAApplyStatus(status)[1] : buildOAApplyNoticeStatus(status)[1],
-      style: TextStyle(fontSize: 12, color: kinds == "1" ? buildOAApplyStatus(status)[0] : buildOAApplyNoticeStatus(status)[0]));
+  return Text(
+      kinds == "1"
+          ? buildOAApplyStatus(status)[1]
+          : buildOAApplyNoticeStatus(status)[1],
+      style: TextStyle(
+          fontSize: 12,
+          color: kinds == "1"
+              ? buildOAApplyStatus(status)[0]
+              : buildOAApplyNoticeStatus(status)[0]));
 }
 
 /// 已批，已读的
 Text oaClassStatusText(int status, {String kinds = "1"}) {
-  return Text(kinds == "1" ? buildOAApplyStatus(status)[1] : buildOAApplyNoticeStatus(status)[1],
-      style: TextStyle(fontSize: 12, color: kinds == "1" ? buildOAApplyStatus(status)[0] : buildOAApplyNoticeStatus(status)[0]));
+  return Text(
+      kinds == "1"
+          ? buildOAApplyStatus(status)[1]
+          : buildOAApplyNoticeStatus(status)[1],
+      style: TextStyle(
+          fontSize: 12,
+          color: kinds == "1"
+              ? buildOAApplyStatus(status)[0]
+              : buildOAApplyNoticeStatus(status)[0]));
 }

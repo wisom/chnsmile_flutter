@@ -50,4 +50,16 @@ class HiColor {
   static const Color common_bg = Color(0xffF7F7F7);
   static const Color common_text = Color(0xFF797979);
   static const Color dark_text = Color(0xFF18191A);
+
+
+  static const Color color_00B0F0 = Color(0xff00B0F0);
+
+  static const Color color_F2F2F7 = Color(0xffF2F2F7);
+  static const Color color_F7F7F7 = Color(0xffF7F7F7);
+  static const Color color_5A5A5A = Color(0xff5A5A5A);
+  static const Color color_181717 = Color(0xff181717);
+  static const Color color_181717_A50 = Color(0x80181717);
+  static const Color color_787777 = Color(0xff787777);
+
+  static const Color color_D8D8D8 = Color(0x80D8D8D8);
 }

@@ -1,6 +1,5 @@
 package io.flutter.plugins;
 
-
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import io.flutter.Log;
@@ -45,11 +44,6 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new record.wilson.flutter.com.flutter_plugin_record.FlutterPluginRecordPlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin flutter_plugin_record, record.wilson.flutter.com.flutter_plugin_record.FlutterPluginRecordPlugin", e);
-    }
-    try {
-      flutterEngine.getPlugins().add(new com.dooboolab.fluttersound.FlutterSound());
-    } catch(Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_sound, com.dooboolab.fluttersound.FlutterSound", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.github.ponnamkarthik.toast.fluttertoast.FlutterToastPlugin());

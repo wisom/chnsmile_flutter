@@ -17,7 +17,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import 'package:flutter_sound/flutter_sound.dart';
+import 'package:chnsmile_flutter/flutter_sound/flutter_sound.dart';
 
 import 'demo_common.dart';
 
