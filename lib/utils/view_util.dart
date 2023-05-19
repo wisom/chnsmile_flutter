@@ -41,8 +41,9 @@ boxLine(BuildContext context) {
 
 ///一根border线
 line(BuildContext context,
-    {Color color = HiColor.color_D8D8D8, double width = 1}) {
+    {Color color = HiColor.color_D8D8D8, double width = 0.5,EdgeInsetsGeometry margin = const EdgeInsets.fromLTRB(0, 0, 0, 0)}) {
   return Container(
+    margin: margin,
     decoration: BoxDecoration(border: Border.all(color: color, width: width)),
   );
 }

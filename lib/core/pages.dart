@@ -14,6 +14,7 @@ import 'package:chnsmile_flutter/page/document/document_page.dart';
 import 'package:chnsmile_flutter/page/family_select_page.dart';
 import 'package:chnsmile_flutter/page/feedback_page.dart';
 import 'package:chnsmile_flutter/page/forget_page.dart';
+import 'package:chnsmile_flutter/page/fund_manager/fund_manager_page.dart';
 import 'package:chnsmile_flutter/page/growth_file/teacher_growth_add_page.dart';
 import 'package:chnsmile_flutter/page/growth_file/teacher_growth_detail2_page.dart';
 import 'package:chnsmile_flutter/page/growth_file/teacher_growth_new_page.dart';
@@ -82,6 +83,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 
+import '../page/fund_manager/fund_manager_detail_page.dart';
 import '../page/info_collection/info_collection_add_page.dart';
 import '../page/info_collection/info_collection_detail_page.dart';
 import '../page/info_collection/info_collection_new_page.dart';
@@ -480,5 +482,14 @@ Map<String, FlutterBoostRouteFactory> routerMap = {
     return CupertinoPageRoute<dynamic>(
         settings: settings,
         builder: (_) => ReimburseDetailPage(params: settings.arguments));
+  },
+  'fund_manager_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings, builder: (_) => FundManagerPage(params: settings.arguments));
+  },
+  'fund_manager_detail_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings,
+        builder: (_) => FundManagerDetailPage(params: settings.arguments));
   },
 };

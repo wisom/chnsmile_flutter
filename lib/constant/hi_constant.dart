@@ -155,6 +155,9 @@ class HiConstant {
   static const String studentClassPlan = 'app-api/app/school/student/classPlan'; // 课程表
   static const String infoCollectionApprovalList = 'app-api/schoolMessageGather/getMessageGatherApp'; // 信息采集列表
 
+  static const String fundManagerList = 'app-api/school-oa/fundApply/page'; // 经费管理列表
+  static const String fundManagerDetail = 'app-api/school-oa/fundApply/detail'; // 经费管理详情
+
   // Native页面
   static String seperator = Utils.isAndroid ? '/' : '_';
   static String webview = 'smile:///sp${seperator}webview?url='; // 通知列表

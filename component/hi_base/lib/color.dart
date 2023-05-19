@@ -23,13 +23,15 @@ const MaterialColor grey = MaterialColor(
     100: Color(0xFFF5F5F5),
     200: Color(0xFFEEEEEE),
     300: Color(0xFFE0E0E0),
-    350: Color(0xFFD6D6D6), // only for raised button while pressed in light theme
+    350: Color(0xFFD6D6D6),
+    // only for raised button while pressed in light theme
     400: Color(0xFFBDBDBD),
     500: Color(0xFF9E9E9E),
     600: Color(0xFF757575),
     700: Color(0xFF616161),
     800: Color(0xFF424242),
-    850: Color(0xFF303030), // only for background color in dark theme
+    850: Color(0xFF303030),
+    // only for background color in dark theme
     900: Color(0xFF212121),
   },
 );
@@ -51,7 +53,6 @@ class HiColor {
   static const Color common_text = Color(0xFF797979);
   static const Color dark_text = Color(0xFF18191A);
 
-
   static const Color color_00B0F0 = Color(0xff00B0F0);
 
   static const Color color_F2F2F7 = Color(0xffF2F2F7);
@@ -60,6 +61,14 @@ class HiColor {
   static const Color color_181717 = Color(0xff181717);
   static const Color color_181717_A50 = Color(0x80181717);
   static const Color color_787777 = Color(0xff787777);
+  static const Color color_878B99 = Color(0xff878B99);
 
   static const Color color_D8D8D8 = Color(0x80D8D8D8);
+
+  static const Color color_black_A20 = Color(0x33000000);
+  static const Color color_black_A60 = Color(0x99000000);
+  static const Color color_black_A80 = Color(0xCC000000);
+  static const Color color_FA0000 = Color(0xFFFA0000);
+  static const Color color_EA0000 = Color(0xFFEA0000);
+  static const Color color_FFC41B = Color(0xFFFFC41B);
 }
