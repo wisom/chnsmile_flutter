@@ -158,6 +158,8 @@ class HiConstant {
   static const String fundManagerList = 'app-api/school-oa/fundApply/page'; // 经费管理列表
   static const String fundManagerDetail = 'app-api/school-oa/fundApply/detail'; // 经费管理详情
 
+  static const String reimburseList = 'app-api/school-oa/schoolOaReimbursement/pageList'; // 报销管理列表
+
   // Native页面
   static String seperator = Utils.isAndroid ? '/' : '_';
   static String webview = 'smile:///sp${seperator}webview?url='; // 通知列表

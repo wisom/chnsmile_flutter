@@ -1,10 +1,10 @@
 import 'package:chnsmile_flutter/core/hi_oa_state.dart';
 import 'package:chnsmile_flutter/core/oa_base_state.dart';
 import 'package:chnsmile_flutter/http/dao/home_dao.dart';
+import 'package:chnsmile_flutter/page/reimburse/reimburse_tab_page.dart';
 import 'package:chnsmile_flutter/widget/appbar.dart';
 import 'package:chnsmile_flutter/widget/hi_badge.dart';
 import 'package:chnsmile_flutter/widget/hi_tab.dart';
-import 'package:chnsmile_flutter/widget/repair_tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:hi_base/view_util.dart';
@@ -15,10 +15,10 @@ class ReimbursePage extends OABaseState {
   ReimbursePage({Key key, this.params}) : super(key: key, params: params);
 
   @override
-  _RepairPageState createState() => _RepairPageState();
+  _ReimbursePageState createState() => _ReimbursePageState();
 }
 
-class _RepairPageState extends HiOAState<ReimbursePage>
+class _ReimbursePageState extends HiOAState<ReimbursePage>
     with SingleTickerProviderStateMixin {
   final List<String> _tabs = [];
   TabController _controller;
@@ -49,9 +49,12 @@ class _RepairPageState extends HiOAState<ReimbursePage>
     setTag("BX");
     super.initState();
     loadDefaultData();
-    if (widget.hasPermission("school_oa_repair_init")) _tabs.add("报修申请");
-    if (widget.hasPermission("school_oa_repair_approve")) _tabs.add("报修审批");
-    if (widget.hasPermission("school_oa_repair_information")) _tabs.add("收到通知");
+    // if (widget.hasPermission("school_oa_repair_init"))
+      _tabs.add("报销申请");
+    // if (widget.hasPermission("school_oa_repair_approve"))
+      _tabs.add("报销审批");
+    // if (widget.hasPermission("school_oa_repair_information"))
+      _tabs.add("收到通知");
     _controller = TabController(length: _tabs.length, vsync: this);
   }
 
@@ -89,17 +92,18 @@ class _RepairPageState extends HiOAState<ReimbursePage>
         child: TabBarView(
             controller: _controller,
             children: _tabs.map((tab) {
-              return RepairTabPage(type: _buildType(tab));
+              return ReimburseTabPage(type: _buildType(tab));
             }).toList()));
   }
 
+  ///列表类型 1.发起列表；2.审批列表；3.通知列表；
   _buildType(String tab) {
-    if (tab == "报修审批") {
+    if (tab == "报销申请") {
       return "1";
-    } else if (tab == "收到通知") {
+    } else if (tab == "报销审批") {
       return "2";
     } else {
-      return "";
+      return "3";
     }
   }
 }
