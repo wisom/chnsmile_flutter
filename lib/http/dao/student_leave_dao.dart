@@ -23,6 +23,7 @@ import '../request/fund_manager/fund_manager_list_request.dart';
 import '../request/info_collection/info_collection_approval_request.dart';
 import '../request/reimburese/reimburese_list_request.dart';
 import '../request/student_leave/student_leave_list_request.dart';
+import '../request/student_leave/student_leave_summary_request.dart';
 
 class StudentLeaveDao {
   static getSysOrg() async {
@@ -38,19 +39,13 @@ class StudentLeaveDao {
     return FundManagerDetail.fromJson(result['data']);
   }
 
-  ///获取经费列表
+  ///获取学生请假列表
   static list(int page, int pageSize, String listType, String searchBeginTime,
       String searchEndTime) async {
     Map<String, dynamic> params = {};
     params['pageNo'] = page;
     params['pageSize'] = pageSize;
     params['listType'] = listType;
-    if (searchBeginTime.isNotEmpty) {
-      params['searchBeginTime'] = searchBeginTime;
-    }
-    if (searchEndTime.isNotEmpty) {
-      params['searchEndTime'] = searchEndTime;
-    }
     StudentLeaveListRequest request = StudentLeaveListRequest();
     request.params = params;
     var result = await HiNet.getInstance().fire(request);
@@ -60,6 +55,24 @@ class StudentLeaveDao {
       throw HiNetError(HiConstant.errorBusCode, result['message']);
     }
   }
+
+  ///获取学生请假缺勤汇总列表
+  static summarylist(int page, int pageSize, String queryType, String searchBeginTime,
+      String searchEndTime) async {
+    Map<String, dynamic> params = {};
+    params['pageNo'] = page;
+    params['pageSize'] = pageSize;
+    params['queryType'] = queryType;//1:查询我班，2.查询全部
+    StudentLeaveSummaryRequest request = StudentLeaveSummaryRequest();
+    request.params = params;
+    var result = await HiNet.getInstance().fire(request);
+    if (result['code'] == HiConstant.successCode) {
+      return StudentLeaveModel.fromJson(result['data']);
+    } else {
+      throw HiNetError(HiConstant.errorBusCode, result['message']);
+    }
+  }
+
 
   /// 删除
   static delete(String repairId) async {

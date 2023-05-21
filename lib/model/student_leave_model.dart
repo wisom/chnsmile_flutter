@@ -37,6 +37,10 @@ class StudentLeave {
   String approveDate;//审批时间
   int hours;//请假小时数
 
+  String leaveDate;//缺勤日期
+  String classId;//班级id
+  String reason;//请假事由
+
   StudentLeave({
     this.id,
     this.formId,
@@ -51,6 +55,9 @@ class StudentLeave {
     this.reviewStatus,
     this.approveDate,
     this.hours,
+    this.leaveDate,
+    this.classId,
+    this.reason,
   });
 
   StudentLeave.fromJson(Map<String, dynamic> json) {
@@ -67,6 +74,9 @@ class StudentLeave {
     reviewStatus = json['reviewStatus'];
     approveDate = json['approveDate'];
     hours = json['hours'];
+    leaveDate = json['leaveDate'];
+    classId = json['classId'];
+    reason = json['reason'];
   }
 
   Map<String, dynamic> toJson() {
@@ -84,6 +94,9 @@ class StudentLeave {
     data['reviewStatus'] = this.reviewStatus;
     data['approveDate'] = this.approveDate;
     data['hours'] = this.hours;
+    data['leaveDate'] = this.leaveDate;
+    data['classId'] = this.classId;
+    data['reason'] = this.reason;
     return data;
   }
 

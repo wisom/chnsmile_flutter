@@ -7,6 +7,7 @@ import 'package:chnsmile_flutter/model/student_leave_model.dart';
 import 'package:chnsmile_flutter/page/reimburse/reimburse_card.dart';
 import 'package:chnsmile_flutter/page/student_leave/student_leave_approval_card.dart';
 import 'package:chnsmile_flutter/page/student_leave/student_leave_notify_card.dart';
+import 'package:chnsmile_flutter/page/student_leave/student_leave_summary_card.dart';
 import 'package:chnsmile_flutter/utils/common.dart';
 import 'package:chnsmile_flutter/widget/empty_view.dart';
 import 'package:flutter/material.dart';
@@ -81,8 +82,10 @@ class _StudentLeaveTabPageState extends OABaseTabState<StudentLeaveModel,
     EasyLoading.show(status: '加载中...');
     isLoaded = true;
     try {
-      StudentLeaveModel result =
-          await StudentLeaveDao.list(pageIndex, 10, widget.type, "", "");
+      StudentLeaveModel result = widget.type == "5"
+          ? await StudentLeaveDao.summarylist(
+              pageIndex, 10, widget.type, "", "")
+          : await StudentLeaveDao.list(pageIndex, 10, widget.type, "", "");
       EasyLoading.dismiss(animation: false);
       isLoaded = false;
       return result;
@@ -108,7 +111,7 @@ class _StudentLeaveTabPageState extends OABaseTabState<StudentLeaveModel,
       return StudentLeaveNotifyCard(
           type: widget.type, item: dataList[index], onCellClick: _onCellClick);
     } else if (widget.type == "5") {
-      return StudentLeaveApprovalCard(
+      return StudentLeaveSumaryCard(
           type: widget.type, item: dataList[index], onCellClick: _onCellClick);
     } else if (widget.type == "1") {
       return StudentLeaveApprovalCard(
