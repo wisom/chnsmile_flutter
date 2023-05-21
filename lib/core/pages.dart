@@ -90,6 +90,7 @@ import '../page/info_collection/info_collection_new_page.dart';
 import '../page/reimburse/reimburse_add_page.dart';
 import '../page/reimburse/reimburse_detail_page.dart';
 import '../page/reimburse/reimburse_page.dart';
+import '../page/student_leave/student_leave_page.dart';
 
 Map<String, FlutterBoostRouteFactory> routerMap = {
   '/': (RouteSettings settings, uniqueId) {
@@ -491,5 +492,9 @@ Map<String, FlutterBoostRouteFactory> routerMap = {
     return CupertinoPageRoute<dynamic>(
         settings: settings,
         builder: (_) => FundManagerDetailPage(params: settings.arguments));
+  },
+  'student_leave_page': (RouteSettings settings, uniqueId) {
+    return CupertinoPageRoute<dynamic>(
+        settings: settings, builder: (_) => StudentLeavePage(params: settings.arguments));
   },
 };

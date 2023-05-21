@@ -160,6 +160,8 @@ class HiConstant {
 
   static const String reimburseList = 'app-api/school-oa/schoolOaReimbursement/pageList'; // 报销管理列表
 
+  static const String studentLeaveList = 'app-api/school-oa/schoolOaStudentLeave/leaveList'; // 学生请假列表
+
   // Native页面
   static String seperator = Utils.isAndroid ? '/' : '_';
   static String webview = 'smile:///sp${seperator}webview?url='; // 通知列表
