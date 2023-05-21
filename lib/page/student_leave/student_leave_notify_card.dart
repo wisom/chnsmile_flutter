@@ -7,13 +7,13 @@ import 'package:hi_base/color.dart';
 import 'package:hi_base/view_util.dart';
 import '../../model/student_leave_model.dart';
 
-///请假审批
-class StudentLeaveApprovalCard extends StatelessWidget {
+///学生请假-收到通知
+class StudentLeaveNotifyCard extends StatelessWidget {
   final String type;
   final StudentLeave item;
   final ValueChanged<StudentLeave> onCellClick;
 
-  const StudentLeaveApprovalCard(
+  const StudentLeaveNotifyCard(
       {Key key, this.type, this.item, this.onCellClick})
       : super(key: key);
 
@@ -30,11 +30,11 @@ class StudentLeaveApprovalCard extends StatelessWidget {
           child: Column(
             children: [
               _buildTop(),
-              hiSpace(height: 11),
+              hiSpace(height: 8),
               _buildCenter(),
-              hiSpace(height: 11),
+              hiSpace(height: 13),
               line(context),
-              hiSpace(height: 11),
+              hiSpace(height: 9),
               _buildBottom()
             ],
           ),
@@ -45,7 +45,7 @@ class StudentLeaveApprovalCard extends StatelessWidget {
     return Row(
       children: [
         const Text(
-          "请假开始时间  ",
+          "请假事由： ",
           style: TextStyle(color: HiColor.color_181717_A50, fontSize: 12),
         ),
         Text(
@@ -63,26 +63,12 @@ class StudentLeaveApprovalCard extends StatelessWidget {
         Row(
           children: [
             Text(
-              "请假人：" + (item.leaveStudentName ?? "") + "    请假 ",
+              (item.leaveStudentName??"") + "发出的请假申请",
               style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: HiColor.color_181717),
             ),
-            Text(
-              (item.hours ?? 0).toString(),
-              style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: HiColor.color_00B0F0),
-            ),
-            const Text(
-              " 小时",
-              style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: HiColor.color_181717),
-            )
           ],
         ),
         Container(
@@ -138,19 +124,19 @@ class StudentLeaveApprovalCard extends StatelessWidget {
         Row(
           children: [
             const Text(
-              "请假班级",
+              "表单编号",
               style: TextStyle(fontSize: 12, color: HiColor.color_181717_A50),
             ),
             Text(
-              "  " + item.className ?? "",
+              "  " + item.formId ?? "",
               style: const TextStyle(fontSize: 12, color: HiColor.color_181717),
             ),
           ],
         ),
         Text(
-          "发起时间 " +
-              dateYearMothAndDayAndMinutes(
-                  (item.approveDate ?? "").replaceAll(".000", "")),
+          "通知日期 " +
+              dateYearMothAndDay(
+                  (item.dDate ?? "").replaceAll(".000", "")),
           style: const TextStyle(fontSize: 12, color: HiColor.color_181717_A50),
         )
       ],
